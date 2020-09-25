@@ -1,0 +1,15 @@
+.news-logo {
+    display: inline-block;
+    min-width: 10px;
+    color: blue;
+}
+
+.news-title {
+    margin-left: 5px;
+}
+
+.service-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
