@@ -6,7 +6,6 @@ import {BreakingNews} from "./components/news/BreakingNews";
 import {News} from "./components/news/News";
 import {Search} from "./components/search/Search";
 import {Service} from "./components/service/Service";
-import {TitleService} from "./components/service/TitleService";
 import {ServiceContent} from "./components/service/ServiceContent";
 
 const list = [{
@@ -26,6 +25,18 @@ const list = [{
     }
 
 ]
+
+const serviceList= [
+    {title: "Погода",
+        content:["Облачно +15"]
+    },
+    {title: "Посещаемое",
+        content: ["Недвижимость","Маркет"]
+    },
+    {title:"Эфир",
+        content: ["ТНТ","Best","Джинглики"]
+    }
+]
 function App() {
   return (
     <div className="App">
@@ -38,23 +49,11 @@ function App() {
                                   <span className="news-title">{item.title}</span></a></News>)}
         </BreakingNews>
         <Search />
-        <div className="service-panel">
-            <Service>
-                <TitleService title="Погода"/>
-                <ServiceContent>
-                </ServiceContent>
-            </Service>
-            <Service>
-                <TitleService title="Посещаемое"/>
-                <ServiceContent>
-                </ServiceContent>
-            </Service>
-            <Service>
-                <TitleService title="Эфир"/>
-                <ServiceContent>
-                </ServiceContent>
-            </Service>
-        </div>
+        <Service items={serviceList}>
+            {items=> items.map((item,index)=>
+            <ServiceContent key={index} title={item.title} content={item.content}/>
+            )}
+        </Service>
     </div>
   );
 }

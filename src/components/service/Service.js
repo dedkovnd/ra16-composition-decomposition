@@ -1,5 +1,5 @@
 import React from "react";
-//блок для класса ServicePanel в App
-export const Service = proprs => (
-    <div>{proprs.children}</div>
+//блок Service
+export const Service = props => (
+    <div className="service">{props.children(props.items)}</div>
 )

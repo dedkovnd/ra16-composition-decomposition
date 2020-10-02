@@ -1,6 +1,10 @@
 import React from "react";
-//контент для Service. Вероятно, здесь еще в качестве props.children должны были приходить
-//более мелкие компоненты в виде текста и графики
+//контент для Service
 export const ServiceContent = props => (
-    <div>{props.children}</div>
+    <div>
+        <h3>{props.title}</h3>
+        <ul>
+            {[...(props.content)].map((elem, i) => <li key={i}>{elem}</li>)}
+        </ul>
+    </div>
 )
